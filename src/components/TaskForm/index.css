@@ -1,0 +1,56 @@
+/* Add these styles to TaskForm.css */
+
+.task-form {
+  max-width: 400px;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+}
+
+label {
+  display: block;
+  margin-bottom: 8px;
+}
+
+input,
+textarea,
+select {
+  width: 90%;
+  padding: 10px;
+  margin-bottom: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+button {
+  background-color: #4caf50;
+  color: #fff;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+.main-headingEl {
+  margin-left: 20px;
+}
+.taskItem-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+.input1 {
+  width: 90%;
+}
+.search-container {
+  width: 250px;
+  margin-left: 20px;
+}
+.addTask-btn {
+  background-color: rgb(109, 109, 170);
+}
