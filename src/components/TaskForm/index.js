@@ -13,6 +13,7 @@ class TaskForm extends Component {
     priority: "low",
     status: "in-progress",
     tasksList: [],
+    searchInput: "",
   };
 
   handleSubmit = (e) => {
@@ -76,15 +77,21 @@ class TaskForm extends Component {
   };
 
   onSearchInput = (event) => {
-    const { tasksList } = this.state;
-    const filtered = tasksList.filter((each) =>
-      each.title.includes(event.target.value)
-    );
-    this.setState({ tasksList: filtered });
+    this.setState({ searchInput: event.target.value });
   };
 
   render() {
-    const { title, description, dueDate, priority, tasksList } = this.state;
+    const {
+      title,
+      description,
+      dueDate,
+      priority,
+      tasksList,
+      searchInput,
+    } = this.state;
+    const filtered = tasksList.filter((each) =>
+      each.title.includes(searchInput)
+    );
 
     return (
       <div>
@@ -139,7 +146,7 @@ class TaskForm extends Component {
             />
           </div>
           <ul className="taskItem-container">
-            {tasksList.map((task) => (
+            {filtered.map((task) => (
               <TaskItem
                 onClickDelete={this.onClickDelete}
                 onClickS={this.onClickS}
